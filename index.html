@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#080c17">
   <title>Portfolio | Pokédex</title>
   <link rel="stylesheet" href="styles.css">
-  <script type="module" src="app.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -84,5 +83,34 @@
       </button>
     </nav>
   </main>
+  
+  <!-- Pokémon detail card: both faces belong to this same modal -->
+  <div class="pokemon-modal" id="pokemonModal" hidden>
+    <div class="pokemon-modal-overlay" data-close-modal></div>
+    <section class="pokemon-modal-dialog" role="dialog" aria-modal="true" aria-label="Pokémon details">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close Pokémon details">×</button>
+      <div class="pokemon-modal-card">
+        <article class="pokemon-card-face pokemon-card-front">
+          <div class="modal-card-heading"><span class="modal-pokemon-id"></span><span class="modal-card-kicker">POKÉDEX ENTRY</span></div>
+          <h2 class="modal-pokemon-name"></h2>
+          <div class="modal-pokemon-artwork"><img class="modal-pokemon-image" src="" alt=""></div>
+          <div class="modal-pokemon-types type-list"></div>
+          <div class="modal-basic-info"><span><b>Height</b><small class="modal-pokemon-height"></small></span><span><b>Weight</b><small class="modal-pokemon-weight"></small></span></div>
+          <section class="front-stats"><h3>Base Stats</h3><div class="modal-pokemon-stats"></div></section>
+          <section class="modal-abilities-section"><h3>Abilities</h3><div class="modal-pokemon-abilities"></div></section>
+          <p class="modal-pokemon-description"></p>
+          <button class="flip-button" type="button" data-flip-card>Evolution Line <span aria-hidden="true">↗</span></button>
+        </article>
+        <article class="pokemon-card-face pokemon-card-back">
+          <div class="evolution-card-header"><div class="evolution-heading-icon" aria-hidden="true">◉</div><div><h2 class="back-card-title">Evolution Line</h2><p class="evolution-subtitle">Follow this Pokémon's evolutionary journey.</p></div></div>
+          <div class="evolution-back-scroll"><div class="modal-evolution-chain" aria-live="polite"></div>
+            <section class="mega-evolution-section" hidden><div class="mega-section-heading"><span class="mega-icon" aria-hidden="true">✧</span><div><h3>Mega Evolution</h3><p>Special Mega forms recorded by PokéAPI.</p></div></div><div class="modal-mega-forms"></div></section>
+          </div>
+          <div class="evolution-back-footer"><span class="evolution-footnote">Conditions shown when available from PokéAPI.</span><button class="flip-button secondary-flip" type="button" data-flip-card><span aria-hidden="true">←</span> Back to Details</button></div>
+        </article>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
