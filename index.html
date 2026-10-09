@@ -35,8 +35,33 @@
         >
         <button id="searchBtn" type="button">Search</button>
       </div>
-    </section>
+      <div class="filter-row">
+        <label for="typeFilter">Filter by type</label>
 
+        <select id="typeFilter">
+          <option value="all">All types</option>
+          <option value="normal">Normal</option>
+          <option value="fire">Fire</option>
+          <option value="water">Water</option>
+          <option value="electric">Electric</option>
+          <option value="grass">Grass</option>
+          <option value="ice">Ice</option>
+          <option value="fighting">Fighting</option>
+          <option value="poison">Poison</option>
+          <option value="ground">Ground</option>
+          <option value="flying">Flying</option>
+          <option value="psychic">Psychic</option>
+          <option value="bug">Bug</option>
+          <option value="rock">Rock</option>
+          <option value="ghost">Ghost</option>
+          <option value="dragon">Dragon</option>
+          <option value="dark">Dark</option>
+          <option value="steel">Steel</option>
+          <option value="fairy">Fairy</option>
+        </select>
+      </div>
+    </section>
+    
     <p id="status" role="status" aria-live="polite">
       Ready to explore.
     </p>
@@ -46,6 +71,18 @@
       class="pokemon-grid"
       aria-label="Pokémon results"
     ></section>
+    
+    <nav class="pagination" aria-label="Pokémon pages">
+      <button id="prevBtn" type="button" disabled>
+        Previous
+      </button>
+
+      <span id="pageInfo" aria-live="polite">Page 1</span>
+
+      <button id="nextBtn" type="button">
+        Next
+      </button>
+    </nav>
   </main>
 </body>
 </html>

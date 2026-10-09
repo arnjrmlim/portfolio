@@ -21,6 +21,7 @@ export async function searchPokemon(query) {
   return pokemon;
 }
 
+
 export async function getPokemonList(limit = 20, offset = 0) {
   const response = await fetch(
     `${API_BASE_URL}/pokemon?limit=${limit}&offset=${offset}`
@@ -44,5 +45,8 @@ export async function getPokemonList(limit = 20, offset = 0) {
     })
   );
 
-  return pokemonList;
+  return {
+    pokemonList,
+    totalCount: data.count
+  };
 }
