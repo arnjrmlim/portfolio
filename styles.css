@@ -689,7 +689,12 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-width: none;
 }
+.pokemon-card-face::-webkit-scrollbar { display: none; }
+.modal-card-heading { padding-right: 54px; }
+.pokemon-modal-dialog:focus { outline: none; }
+.modal-close { position: absolute; top: 14px; right: 14px; z-index: 5; }
 .pokemon-card-front {
   gap: 9px;
 }

@@ -246,7 +246,17 @@ pokemonGrid.addEventListener("click", async (event) => {
 
     renderPokemonModal(pokemon, pokemonModal);
 
-    pokemonModal.querySelector(".modal-close").focus();
+    const dialog = pokemonModal.querySelector(".pokemon-modal-dialog");
+    dialog.tabIndex = -1;
+    dialog.focus();
+
+    const closeButton = pokemonModal.querySelector(".modal-close");
+    const frontFace = pokemonModal.querySelector(".pokemon-card-front");
+    const backFace = pokemonModal.querySelector(".pokemon-card-back");
+    if (closeButton.parentElement !== frontFace) {
+      frontFace.prepend(closeButton);
+      backFace.prepend(closeButton.cloneNode(true));
+    }
 
     // Load evolution data separately.
     try {
