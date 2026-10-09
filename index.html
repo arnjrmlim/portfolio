@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080c17">
+  <title>Portfolio | Pokédex</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">AL</span>
+      Aaron.<span class="accent">dev</span>
+    </a>
+    <span class="subtitle">Let's Talk</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">EXPLORE THE WORLD OF POKÉMON</p>
+      <h1>Discover your next <span class="accent">Pokémon.</span></h1>
+      <p>Search by name or Pokédex number to explore Pokémon data.</p>
+    </section>
+
+    <section class="search-panel" aria-label="Pokémon search">
+      <label for="pokemonSearch">Pokémon name or ID</label>
+      <div class="search-row">
+        <input
+          id="pokemonSearch"
+          type="search"
+          placeholder="Try Pikachu or 25"
+          autocomplete="off"
+        >
+        <button id="searchBtn" type="button">Search</button>
+      </div>
+    </section>
+
+    <p id="status" role="status" aria-live="polite">
+      Ready to explore.
+    </p>
+
+    <section
+      id="pokemonGrid"
+      class="pokemon-grid"
+      aria-label="Pokémon results"
+    ></section>
+  </main>
+</body>
+</html>
